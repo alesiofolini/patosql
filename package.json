@@ -19,8 +19,16 @@
     "duckdb",
     "sql"
   ],
-  "author": "",
+  "author": "Alesio Folini (https://github.com/alesiofolini)",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alesiofolini/patosql.git"
+  },
+  "homepage": "https://github.com/alesiofolini/patosql#readme",
+  "bugs": {
+    "url": "https://github.com/alesiofolini/patosql/issues"
+  },
   "dependencies": {
     "@duckdb/duckdb-wasm": "^1.33.1-dev45.0",
     "monaco-editor": "^0.52.2",

@@ -25,9 +25,14 @@ Abrí http://localhost:5173
 
 ## GitHub Pages
 
-1. En `vite.config.ts`, poné `base: '/patosql/'` (o el nombre exacto de tu repo).
-2. `npm run build`
-3. `npx gh-pages -d dist`
+```bash
+npm run build:pages
+npx gh-pages -d dist
+```
+
+Luego en el repo: **Settings → Pages → Branch `gh-pages`**.
+
+URL: `https://alesiofolini.github.io/patosql/`
 
 ## App de escritorio (Mac)
 
@@ -48,3 +53,12 @@ Instalador en `release/PatoSQL-1.0.0-arm64.dmg`
 ## Privacidad
 
 Todo corre en tu máquina o navegador. Tus datos y SQL no se envían a ningún servidor.
+
+## Licencia
+
+[MIT](LICENSE) — Copyright (c) 2026 Alesio Folini
+
+## Aviso
+
+PatoSQL es un proyecto independiente y no está afiliado, respaldado ni patrocinado por DuckDB.
+DuckDB es una marca de sus respectivos titulares. Las dependencias de terceros (DuckDB-WASM, Monaco, SheetJS, etc.) mantienen sus propias licencias.

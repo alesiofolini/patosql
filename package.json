@@ -1,0 +1,67 @@
+{
+  "name": "patosql",
+  "version": "1.0.0",
+  "description": "PatoSQL — GUI SQL con DuckDB en el navegador",
+  "main": "electron/main.cjs",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "electron:dev": "concurrently -k \"vite\" \"wait-on http://localhost:5173 && electron .\"",
+    "electron:pack": "npm run build && electron-builder --mac --dir",
+    "electron:build": "npm run build && electron-builder --mac",
+    "build:pages": "GITHUB_PAGES=true npm run build"
+  },
+  "keywords": [
+    "patosql",
+    "pato",
+    "duckdb",
+    "sql"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@duckdb/duckdb-wasm": "^1.33.1-dev45.0",
+    "monaco-editor": "^0.52.2",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.3",
+    "concurrently": "^9.1.2",
+    "electron": "^35.1.5",
+    "electron-builder": "^26.0.12",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5",
+    "wait-on": "^8.0.3"
+  },
+  "build": {
+    "appId": "com.patosql.app",
+    "productName": "PatoSQL",
+    "copyright": "Copyright © 2026",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "package.json"
+    ],
+    "asar": true,
+    "icon": "build/icon.png",
+    "mac": {
+      "category": "public.app-category.developer-tools",
+      "icon": "build/icon.icns",
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "artifactName": "PatoSQL-${version}-${arch}.${ext}"
+    },
+    "dmg": {
+      "title": "PatoSQL ${version}",
+      "icon": "build/icon.icns",
+      "iconSize": 80
+    }
+  }
+}

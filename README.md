@@ -25,14 +25,29 @@ Abrí http://localhost:5173
 
 ## GitHub Pages
 
+GitHub Pages **no puede** servir el código fuente (`index.html` con `/src/main.ts`). Hay que publicar la carpeta `dist/` compilada.
+
+### 1. Publicar el build
+
 ```bash
-npm run build:pages
-npx gh-pages -d dist
+npm run deploy:pages
 ```
 
-Luego en el repo: **Settings → Pages → Branch `gh-pages`**.
+Eso compila con `base: /patosql/` y sube `dist/` a la rama `gh-pages`.
 
-URL: `https://alesiofolini.github.io/patosql/`
+### 2. Configurar Pages en GitHub
+
+En el repo: **Settings → Pages**
+
+- **Source:** Deploy from a branch
+- **Branch:** `gh-pages` / `(root)`
+- **No** uses la rama `main` como fuente del sitio
+
+### 3. Abrí el sitio
+
+`https://alesiofolini.github.io/patosql/`
+
+> Si ves errores 404 en `main.ts` o `icon.png`, Pages está sirviendo `main` en lugar del build. Cambiá la fuente a `gh-pages`.
 
 ## App de escritorio (Mac)
 
